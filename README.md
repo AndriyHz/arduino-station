@@ -15,7 +15,15 @@ There are various ways to enable internet connection on Arduino-like boards, eit
   - $19 USD
   - Wiring difficulty: normal
   - [Setup instructions >>][photon-setup]
-2. **ESP8266 Arduino**
+2. **NodeMCU**
+  - Compact wifi module with Arduino-like capabilities
+  - Integrated well with Arduino IDE
+  - Useful libraries like http server/client, wifi manager, OTA...
+  - 4MB flash
+  - $8 USD
+  - Wiring difficulty: normal
+  - [Setup instructions >>][nodemcu-setup]
+3. **ESP8266 Arduino**
   - Compact wifi module with Arduino-like capabilities
   - Integrated well with Arduino IDE
   - Useful libraries like http server/client, wifi manager, OTA...
@@ -23,7 +31,7 @@ There are various ways to enable internet connection on Arduino-like boards, eit
   - $5 USD
   - Wiring difficulty: a little complex
   - [Setup instructions >>][esp-setup]
-3. **Arduino + ESP8266 Serial Wifi module** 
+4. **Arduino + ESP8266 Serial Wifi module** 
   - Send AT commands in Arduino firmware to control wifi module via serial pins
   - 32KB flash
   - $27 USD (Using clones could be much cheaper)
@@ -47,5 +55,6 @@ Since our first initiative is to build a PM2.5 sensor network, we only have one 
 [PMS3003]: https://goo.gl/CIVGjF
 [aqicn-measurment]: http://aqicn.org/sensor/
 [photon-setup]: https://github.com/sensor-web/arduino-station/tree/master/station/particle-photon
+[nodemcu-setup]: https://github.com/sensor-web/arduino-station/tree/master/station/nodemcu
 [esp-setup]: https://github.com/sensor-web/arduino-station/tree/master/station/esp8266
 [esp-serial-setup]: https://github.com/sensor-web/arduino-station/tree/master/station/esp8266-serial2wifi

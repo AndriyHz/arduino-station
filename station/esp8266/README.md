@@ -1,5 +1,4 @@
 ESP8266 Arduino Setup Instructions
-ESP8266 Arduino Setup Instructions
 ==================================
 
 ## Hardware & Accessories to Prepare in Advance
