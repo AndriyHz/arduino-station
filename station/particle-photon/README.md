@@ -41,7 +41,7 @@ Go back to the app you just created, and paste following code inside the ino fil
 
 https://github.com/sensor-web/arduino-station/tree/master/station/particle-photon/particle-photon.ino
 
-Change the `SENSOR_ID` and `API_KEY` to those you get from [SensorWeb dashboard][sensorweb-profile].
+Change the `SENSOR_ID` and `API_KEY` to those you get from [SensorWeb][sensorweb].
 
 ## Step 4: Flash Firmware and Get it Running
 
@@ -69,11 +69,11 @@ If it's blinking purple, and reboot to breathing cyan after a while, it should b
 
 ## Voilà!
 
-Go back to [SensorWeb dashboard][sensorweb-profile] to see your live data.
+Go back to [SensorWeb][sensorweb] to see your live data.
 
 [PMS3003]: https://goo.gl/CIVGjF
 [photon-setup]: https://docs.particle.io/guide/getting-started/start/photon/#step-1-power-on-your-device
-[sensorweb-profile]: http://sensorweb.io/profile
+[sensorweb]: https://sensorweb.io/pm25/
 [nodejs]: https://nodejs.org/
 [particle-cli]: https://github.com/spark/particle-cli
 [particle-app]: https://docs.particle.io/guide/getting-started/start/photon/#prerequisites-for-setup

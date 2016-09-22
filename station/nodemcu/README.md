@@ -21,7 +21,7 @@ https://github.com/sensor-web/arduino-station/blob/master/station/nodemcu/nodemc
 
 Change the `SSID` and `PASS` to connect to your wifi. 
 
-Change `API_KEY` and `SENSOR_ID` to those you get from [SensorWeb dashboard][sensorweb-profile].
+Change `API_KEY` and `SENSOR_ID` to those you get from [SensorWeb][sensorweb].
 
 Click the **Upload** button and wait until it's done.
 
@@ -40,10 +40,10 @@ Finally, power on your USB TTL Adapter to make it work.
 
 ## Voilà!
 
-Go back to [SensorWeb dashboard][sensorweb-profile] to see your live data.
+Go back to [SensorWeb][sensorweb] to see your live data.
 
 [PMS3003]: https://goo.gl/CIVGjF
 [arduino-download]: https://www.arduino.cc/en/Main/Software
 [wifi-manager]: https://github.com/tzapu/WiFiManager#quick-start
 [esp8266-install]: http://esp8266.github.io/Arduino/versions/2.1.0/doc/installing.html
-[sensorweb-profile]: http://sensorweb.io/profile
+[sensorweb]: https://sensorweb.io/pm25/

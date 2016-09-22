@@ -34,7 +34,7 @@ TXD (PIN5) | D10 (SoftSerial RX)
 Open Arduino IDE, paste below code into the IDE:
 https://github.com/sensor-web/arduino-station/blob/master/station/esp8266-serial2wifi/esp8266-serial2wifi-station.ino
 
-Change the `API_KEY` and `SENSOR_ID` to those you get from [SensorWeb dashboard][sensorweb-profile].
+Change the `API_KEY` and `SENSOR_ID` to those you get from [SensorWeb][sensorweb].
 
 Change the `SSID` and `PASS` with your wifi credentials.
 
@@ -59,9 +59,9 @@ And power on Arduino to get it up and running.
 
 ## Voilà!
 
-Go back to [SensorWeb dashboard][sensorweb-profile] to see your live data.
+Go back to [SensorWeb][sensorweb] to see your live data.
 
 [arduino-download]: https://www.arduino.cc/en/Main/Software
 [step-3]: #step-3-connect-esp8266-serial-wifi-module
 [PMS3003]: https://goo.gl/CIVGjF
-[sensorweb-profile]: http://sensorweb.io/profile
+[sensorweb]: https://sensorweb.io/pm25/

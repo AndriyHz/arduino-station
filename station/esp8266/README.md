@@ -49,7 +49,7 @@ https://github.com/sensor-web/arduino-station/blob/master/station/esp8266/esp826
 
 Change the `SSID` and `PASS` to connect to your wifi. 
 
-Change `API_KEY` and `SENSOR_ID` to those you get from [SensorWeb dashboard][sensorweb-profile].
+Change `API_KEY` and `SENSOR_ID` to those you get from [SensorWeb][sensorweb].
 
 Click the **Upload** button and wait until it's done.
 
@@ -87,7 +87,7 @@ Finally, power on your USB TTL Adapter to make it work.
 
 ## Voilà!
 
-Go back to [SensorWeb dashboard][sensorweb-profile] to see your live data.
+Go back to [SensorWeb][sensorweb] to see your live data.
 
 [PMS3003]: https://goo.gl/CIVGjF
 [arduino-download]: https://www.arduino.cc/en/Main/Software
@@ -96,4 +96,4 @@ Go back to [SensorWeb dashboard][sensorweb-profile] to see your live data.
 [PL2303]: http://goo.gl/KuqY4h
 [CP2102]: http://goo.gl/jSnHO0
 [FT232RL]: http://goo.gl/IYHhQI
-[sensorweb-profile]: http://sensorweb.io/profile
+[sensorweb]: https://sensorweb.io/pm25/

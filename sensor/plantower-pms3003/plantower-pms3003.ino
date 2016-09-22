@@ -1,6 +1,6 @@
+unsigned int pm1 = 0;
+unsigned int pm2_5 = 0;
 unsigned int pm10 = 0;
-unsigned int pm25 = 0;
-unsigned int pm100 = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -22,22 +22,22 @@ void loop() {
       previousValue = value;
     }
     else if (index == 5) {
-      pm10 = 256 * previousValue + value;
+      pm1 = 256 * previousValue + value;
       Serial.print("{ ");
-      Serial.print("\"pm10\": ");
-      Serial.print(pm10);
+      Serial.print("\"pm1\": ");
+      Serial.print(pm1);
       Serial.print(", ");
     }
     else if (index == 7) {
-      pm25 = 256 * previousValue + value;
-      Serial.print("\"pm25\": ");
-      Serial.print(pm25);
+      pm2_5 = 256 * previousValue + value;
+      Serial.print("\"pm2_5\": ");
+      Serial.print(pm2_5);
       Serial.print(", ");
     }
     else if (index == 9) {
-      pm100 = 256 * previousValue + value;
-      Serial.print("\"pm100\": ");
-      Serial.print(pm100);
+      pm10 = 256 * previousValue + value;
+      Serial.print("\"pm10\": ");
+      Serial.print(pm10);
     } else if (index > 15) {
       break;
     }

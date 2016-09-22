@@ -10,7 +10,7 @@
 #define PASS ""
 String SENSOR_ID = "";
 String API_KEY = "";
-String API = "http://api.sensorweb.io/sensors/" + SENSOR_ID + "/data";
+String API = "http://api.sensorweb.io/pm25/station/" + SENSOR_ID + "/data";
 
 int pm1 = -1;
 int pm2_5 = -1;
@@ -63,7 +63,7 @@ void loop() {
 
         // start connection and send HTTP header
         http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-        int httpCode = http.POST("pm25=" + String(pm2_5) + "&apiKey=" + API_KEY);
+        int httpCode = http.POST("pm2_5=" + String(pm2_5) + "&api_key=" + API_KEY);
 
         // httpCode will be negative on error
         if(httpCode > 0) {

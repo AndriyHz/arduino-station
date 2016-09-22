@@ -7,11 +7,11 @@ const String SERVER_ADDRESS = "api.sensorweb.io";
 const String SERVER_PORT = "80";
 const String SENSOR_ID = "sensorId";
 const String API_KEY = "apiKey";
-const String REST_API = "http://" + SERVER_ADDRESS + ":" + SERVER_PORT + "/sensors/" + SENSOR_ID + "/data";
+const String REST_API = "http://" + SERVER_ADDRESS + ":" + SERVER_PORT + "/pm25/station/" + SENSOR_ID + "/data";
 
+unsigned int pm1 = 0;
+unsigned int pm2_5 = 0;
 unsigned int pm10 = 0;
-unsigned int pm25 = 0;
-unsigned int pm100 = 0;
 HTTPClient http;
 
 void setup() {
@@ -44,22 +44,22 @@ void loop() {
       previousValue = value;
     }
     else if (index == 5) {
-      pm10 = 256 * previousValue + value;
+      pm1 = 256 * previousValue + value;
       Serial.print("{ ");
-      Serial.print("\"pm10\": ");
-      Serial.print(pm10);
+      Serial.print("\"pm1\": ");
+      Serial.print(pm1);
       Serial.print(", ");
     }
     else if (index == 7) {
-      pm25 = 256 * previousValue + value;
-      Serial.print("\"pm25\": ");
-      Serial.print(pm25);
+      pm2_5 = 256 * previousValue + value;
+      Serial.print("\"pm2_5\": ");
+      Serial.print(pm2_5);
       Serial.print(", ");
     }
     else if (index == 9) {
-      pm100 = 256 * previousValue + value;
-      Serial.print("\"pm100\": ");
-      Serial.print(pm100);
+      pm10 = 256 * previousValue + value;
+      Serial.print("\"pm10\": ");
+      Serial.print(pm10);
     } else if (index > 15) {
       break;
     }
@@ -70,7 +70,7 @@ void loop() {
 
   http.begin(REST_API);
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-  http.POST("pm25=" + String(pm25) + "&apiKey=" + API_KEY);
+  http.POST("pm2_5=" + String(pm2_5) + "&api_key=" + API_KEY);
   http.writeToStream(&Serial);
   http.end();
 

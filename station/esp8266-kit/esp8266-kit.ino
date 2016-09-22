@@ -167,7 +167,7 @@ void setup() {
   }
 
   //compose API url
-  api += String(api_server) + ":" + String(api_port) + "/sensors/" + String(sensor_id) + "/data";
+  api += String(api_server) + ":" + String(api_port) + "/pm25/station/" + String(sensor_id) + "/data";
 
 }
 
@@ -203,7 +203,7 @@ void loop() {
 
         // start connection and send HTTP header
         http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-        int httpCode = http.POST("pm25=" + String(pm2_5) + "&apiKey=" + String(api_key));
+        int httpCode = http.POST("pm2_5=" + String(pm2_5) + "&api_key=" + String(api_key));
 
         // httpCode will be negative on error
         if(httpCode > 0) {

@@ -97,7 +97,7 @@ Wait for it to reboot.
 
 ## Voilà!
 
-Go back to [SensorWeb dashboard][sensorweb-profile] to see your live data.
+Go back to [SensorWeb][sensorweb] to see your live data.
 
 [PMS3003]: https://goo.gl/CIVGjF
 [arduino-download]: https://www.arduino.cc/en/Main/Software
@@ -106,4 +106,4 @@ Go back to [SensorWeb dashboard][sensorweb-profile] to see your live data.
 [PL2303]: http://goo.gl/KuqY4h
 [CP2102]: http://goo.gl/jSnHO0
 [FT232RL]: http://goo.gl/IYHhQI
-[sensorweb-profile]: http://sensorweb.io/profile
+[sensorweb]: https://sensorweb.io/pm25/

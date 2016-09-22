@@ -10,9 +10,9 @@ http_header_t headers[] = {
 http_request_t request;
 http_response_t response;
 
+unsigned int pm1 = 0;
+unsigned int pm2_5 = 0;
 unsigned int pm10 = 0;
-unsigned int pm25 = 0;
-unsigned int pm100 = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -35,20 +35,20 @@ void loop() {
         index == 10 || index == 12 || index == 14) {
       previousValue = value;
     } else if (index == 5) {
-      pm10 = 256 * previousValue + value;
+      pm1 = 256 * previousValue + value;
       Serial.print("{ ");
-      Serial.print("\"pm10\": ");
-      Serial.print(pm10);
+      Serial.print("\"pm1\": ");
+      Serial.print(pm1);
       Serial.print(", ");
     } else if (index == 7) {
-      pm25 = 256 * previousValue + value;
-      Serial.print("\"pm25\": ");
-      Serial.print(pm25);
+      pm2_5 = 256 * previousValue + value;
+      Serial.print("\"pm2_5\": ");
+      Serial.print(pm2_5);
       Serial.print(", ");
     } else if (index == 9) {
-      pm100 = 256 * previousValue + value;
-      Serial.print("\"pm100\": ");
-      Serial.print(pm100);
+      pm10 = 256 * previousValue + value;
+      Serial.print("\"pm10\": ");
+      Serial.print(pm10);
     } else if (index > 15) {
       break;
     }
@@ -57,11 +57,11 @@ void loop() {
   while(Serial1.available()) Serial1.read();
   Serial.println(" }");
 
-  if (pm10 != 0 && pm25 != 0 && pm100 != 0) {
+  if (pm1 != 0 && pm2_5 != 0 && pm10 != 0) {
     request.hostname = SERVER_ADDRESS;
     request.port = SERVER_PORT;
-    request.path = "/sensors/" + SENSOR_ID + "/data";
-    request.body = "pm25=" + String(pm25) + "&apiKey=" + API_KEY;
+    request.path = "/pm25/station/" + SENSOR_ID + "/data";
+    request.body = "pm2_5=" + String(pm2_5) + "&api_key=" + API_KEY;
 
     http.post(request, response, headers);
     Serial.print("Response status: ");

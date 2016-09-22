@@ -5,7 +5,7 @@
 #define API_KEY ""
 #define HOST "api.sensorweb.io"
 #define PORT "80"
-#define REQ(x) "POST /sensors/"x"/data HTTP/1.0\r\nContent-Length: "
+#define REQ(x) "POST /pm25/station/"x"/data HTTP/1.0\r\nContent-Length: "
 #define REQ2 "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n"
 //#define REQ = "GET / HTTP/1.0\r\n\r\n"
 //SoftwareSerial dbgSerial(10, 11); // RX, TX
@@ -58,7 +58,7 @@ void loop()
   if (pm[1] < 0) {
     return;
   }
-  String body = "pm25=" + String(pm[1]) + "&apiKey=" + API_KEY;
+  String body = "pm2_5=" + String(pm[1]) + "&api_key=" + API_KEY;
   String cmd = "AT+CIPSTART=\"TCP\",\"";
   cmd += HOST;
   cmd += "\",";
@@ -117,9 +117,9 @@ boolean connectWiFi()
 }
 
 int *load() {
+  unsigned int pm1 = 0;
+  unsigned int pm2_5 = 0;
   unsigned int pm10 = 0;
-  unsigned int pm25 = 0;
-  unsigned int pm100 = 0;
   int result[] = {-1, -1, -1};
   int index = 0;
   char value;
@@ -135,15 +135,15 @@ int *load() {
       previousValue = value;
     }
     else if (index == 5) {
-      pm10 = 256 * previousValue + value;
-      result[0] = pm10;
+      pm1 = 256 * previousValue + value;
+      result[0] = pm1;
     }
     else if (index == 7) {
-      pm25 = 256 * previousValue + value;
-      result[1] = pm10;
+      pm2_5 = 256 * previousValue + value;
+      result[1] = pm2_5;
     }
     else if (index == 9) {
-      pm100 = 256 * previousValue + value;
+      pm10 = 256 * previousValue + value;
       result[2] = pm10;
     } else if (index > 15) {
       break;
